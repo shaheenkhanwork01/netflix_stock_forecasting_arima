@@ -80,20 +80,20 @@ The model with the lowest RMSE was selected as the final model.
 
 ### Netflix Stock Price
 
-![Stock Price Trend](images/stock_price_trend.png)
+![Stock Price Trend](image/stock_price_trend.png)
 
 ### Seasonal Decomposition
 
-![Seasonal Decomposition](images/seasonal_decomposition.png)
+![Seasonal Decomposition](image/seasonal_decomposition.png)
 
 ### ACF and PACF
 
-![PACF](images/pacf.png)
-![ACF](images/acf.png)
+![PACF](image/pacf.png)
+![ACF](image/acf.png)
 
 ### Actual vs Forecast
 
-![Actual vs Forecast](images/actual_vs_forecast.png)
+![Actual vs Forecast](image/actual_vs_forecast.png)
 
 ## 📊 Results
 
