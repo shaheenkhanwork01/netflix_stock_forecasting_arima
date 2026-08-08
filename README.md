@@ -159,4 +159,4 @@ This project is mainly for **learning and understanding time-series forecasting*
 
 ## 👨‍💻 Author
 
-**Shan**
+**Shaheen Khan**
