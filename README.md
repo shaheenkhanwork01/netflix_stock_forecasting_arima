@@ -121,7 +121,7 @@ For future improvement, I could use **SARIMAX or Machine Learning models** and i
 
 ## 📓 Project Notebook
 
-[Open the Jupyter Notebook](netflix_stock_forecasting_arima.ipynb)
+[Open the Jupyter Notebook](netflix_stock_forecasting_arima.ipynb
 
 ## 🚀 Google Colab
 
