@@ -2,144 +2,142 @@
 
 ## 📌 Project Overview
 
-In this project, I used the **ARIMA model** to predict Netflix's adjusted closing stock price.
+In this project, I used the **ARIMA time-series model** to forecast Netflix's adjusted closing stock price.
 
-The main goal was to understand how time-series forecasting works and see how well ARIMA can predict stock prices.
+The main purpose of this project was to understand the complete time-series forecasting process, from checking stationarity to evaluating the final forecast.
 
 ## 🎯 Objectives
 
-* Clean the Netflix stock data
-* Understand the stock-price trend
-* Check whether the data is stationary
-* Make the data stationary using differencing
-* Study ACF and PACF
-* Compare different ARIMA models
-* Select the best model
-* Predict Netflix stock prices
-* Check the model's performance
+- Analyze Netflix stock-price data
+- Check stationarity using the ADF test
+- Apply differencing to make the series stationary
+- Analyze ACF and PACF
+- Compare different ARIMA models
+- Forecast future stock prices
+- Evaluate model performance
 
 ## 🛠️ Tools Used
 
-* Python
-* NumPy
-* Pandas
-* Matplotlib
-* Seaborn
-* Statsmodels
-* Scikit-learn
-* Google Colab
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Statsmodels
+- Scikit-learn
+- Google Colab
 
 ## 📊 Dataset
 
-The dataset contains Netflix stock-price data from **2018 to 2022**.
+The dataset contains Netflix stock data from **2018 to 2022**.
 
-It contains:
+It includes:
 
-* Date
-* Open
-* High
-* Low
-* Close
-* Adjusted Close
-* Volume
+- Date
+- Open
+- High
+- Low
+- Close
+- Adjusted Close
+- Volume
 
-I used **Adjusted Close** as the main value for forecasting.
+For forecasting, I used **Adjusted Close** as the target variable.
 
-## 🔍 What I Did
+## 🔍 Approach
 
 ### 1. Data Cleaning
 
-I loaded the Netflix dataset and removed the columns that were not needed.
-
-I also converted the `Date` column into the correct date format.
+I checked the dataset for missing values and duplicate records, converted the `Date` column to datetime format, and used it as the time-series index.
 
 ### 2. Data Visualization
 
-I created a graph to see how Netflix's stock price changed over time.
+I plotted the adjusted closing price to understand the overall trend and movement of Netflix's stock price.
 
-### 3. Stationarity Check
+### 3. Stationarity
 
-I used the **ADF test** to check whether the data was stationary.
+The original series was **not stationary**, so I used the **Augmented Dickey-Fuller (ADF) test** to confirm this.
 
-The original data was **not stationary**.
+### 4. Differencing
 
-### 4. Seasonal Decomposition
+I applied **first-order differencing** to remove the trend and make the series stationary.
 
-I used decomposition to understand the **trend, seasonality, and residuals** in the data.
+The ADF test after differencing confirmed that the series had become stationary.
 
-### 5. Differencing
+### 5. ACF and PACF
 
-I applied first-order differencing to make the data stationary.
+I used ACF and PACF plots to understand the autocorrelation of the differenced series and help determine suitable ARIMA parameters.
 
-After differencing, the ADF test showed that the data had become **stationary**.
+### 6. Model Comparison
 
-### 6. ACF and PACF
+I tested multiple ARIMA configurations and compared them using:
 
-I used ACF and PACF plots to understand the data and help choose the ARIMA parameters.
+- MAE
+- RMSE
 
-### 7. Train-Test Split
+The model with the lowest RMSE was selected as the final model.
 
-I kept the last **30 days** for testing.
+## 📈 Visualizations
 
-The remaining data was used for training.
+### Netflix Stock Price
 
-### 8. ARIMA Models
+![Stock Price Trend](images/stock_price_trend.png)
 
-I tested different ARIMA models and compared their performance using:
+### Seasonal Decomposition
 
-* MAE
-* RMSE
+![Seasonal Decomposition](images/seasonal_decomposition.png)
 
-The model with the lowest RMSE was selected.
+### ACF and PACF
 
-## 📈 Results
+![PACF](images/pacf.png)
+![ACF](images/acf.png)
+
+### Actual vs Forecast
+
+![Actual vs Forecast](images/actual_vs_forecast.png)
+
+## 📊 Results
 
 The final model achieved approximately:
 
-* **MAE: 109.35**
-* **RMSE: 139.08**
+| Metric | Result |
+|---|---:|
+| MAE | 109.35 |
+| RMSE | 139.08 |
 
-The results show that the predictions were not very close to the actual Netflix stock prices.
+The model captured some patterns in the historical data, but the forecast was not accurate enough for reliable real-world stock-price prediction.
 
-## 🧠 My Understanding
+## 🧠 Key Learning
 
-I used ARIMA to predict Netflix's adjusted closing price.
+Through this project, I learned how to:
 
-The original data was not stationary, so I used first-order differencing. After differencing, the data became stationary.
-
-I compared different ARIMA models and selected the model with the lowest RMSE.
-
-The model was able to learn some patterns from the data, but the predictions were not accurate enough for reliable stock-price prediction.
-
-Stock prices can change because of many outside factors, which are not included in this model.
+- Prepare time-series data
+- Test for stationarity
+- Apply differencing
+- Use ACF and PACF
+- Build ARIMA models
+- Compare different models
+- Evaluate forecasting performance
 
 ## 📝 Conclusion
 
-ARIMA is a good model for learning and understanding **time-series forecasting**.
+ARIMA is useful for understanding and practicing time-series forecasting. However, stock prices are influenced by many external factors that are not included in this model.
 
-However, it is not enough for accurate real-world stock-price prediction.
-
-In the future, I can try models such as **SARIMAX or Machine Learning models** and use additional features like trading volume and market trends.
-
-## 🚀 Google Colab
-
-I created this project using Google Colab.
-
-👉 [**Open Netflix Stock Price Forecasting Project in Google Colab**](https://colab.research.google.com/drive/1meueJwsfSA9hg5OS8NgNOey68MlLVhD5?usp=sharing)
-
-## 📁 Project Files
-
-* `netflix_stock_forecasting_arima.ipynb` — Project notebook
-* `README.md` — Project information
-* `stock.csv` — Netflix stock dataset
+For future improvement, I could use **SARIMAX or Machine Learning models** and include additional features such as trading volume and market indicators.
 
 ## ⚠️ Limitations
 
-Stock prices are affected by many external factors.
+- Only historical adjusted closing prices were used.
+- External market factors were not included.
+- Stock prices can be highly volatile.
+- The project is intended for learning and demonstrating time-series forecasting rather than investment advice.
 
-Because of this, the model may not always give accurate predictions.
+## 📓 Project Notebook
 
-This project is mainly for **learning and understanding time-series forecasting**.
+[Open the Jupyter Notebook](netflix_stock_forecasting_arima.ipynb)
+
+## 🚀 Google Colab
+
+[Open the project in Google Colab](https://colab.research.google.com/drive/1meueJwsfSA9hg5OS8NgNOey68MlLVhD5#scrollTo=NKrLxu-DKeOU))
 
 ## 👨‍💻 Author
 
