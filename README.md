@@ -106,18 +106,6 @@ The final model achieved approximately:
 
 The model captured some patterns in the historical data, but the forecast was not accurate enough for reliable real-world stock-price prediction.
 
-## 🧠 Key Learning
-
-Through this project, I learned how to:
-
-- Prepare time-series data
-- Test for stationarity
-- Apply differencing
-- Use ACF and PACF
-- Build ARIMA models
-- Compare different models
-- Evaluate forecasting performance
-
 ## 📝 Conclusion
 
 ARIMA is useful for understanding and practicing time-series forecasting. However, stock prices are influenced by many external factors that are not included in this model.
