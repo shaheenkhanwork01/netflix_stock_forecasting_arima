@@ -121,22 +121,6 @@ However, it is not enough for accurate real-world stock-price prediction.
 
 In the future, I can try models such as **SARIMAX or Machine Learning models** and use additional features like trading volume and market trends.
 
-## 📚 What I Learned
-
-Through this project, I learned:
-
-* Data cleaning
-* Time-series analysis
-* ADF test
-* Stationarity
-* Differencing
-* Seasonal decomposition
-* ACF and PACF
-* ARIMA
-* Model comparison
-* MAE and RMSE
-* Forecasting
-
 ## 🚀 Google Colab
 
 I created this project using Google Colab.
